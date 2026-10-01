@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="app">
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+
+            <div class="logo">
+                Expense Tracker
+            </div>
+
+            <nav>
+                <a href="#" class="active">Dashboard</a>
+        
+            </nav>
+            <div class="sidebar-message">
+                <p>
+                    Track your expenses,
+                    save more, live better
+                </p>
+            </div>
+            <button id="delete">Delete All</button> 
+
+        </aside>
+
+
+        <!-- Main Content -->
+        <main class="main-content">
+
+            <!-- Header -->
+            <header class="page-header">
+
+                <div class="greeting">
+                    <h1>Hello, Buddy</h1>
+                    <p>Here's your expense overview</p>
+                </div>
+                <div class="header-actions">
+
+    <select id="month-selector">
+    </select>
+</div>
+
+
+            
+
+            </header>
+
+
+            <!-- Summary Cards -->
+            <section class="summary-cards">
+
+                <article class="summary-card">
+                    <h2>Total Expenses</h2>
+
+                    <p id="total-expenses">
+                        ₹0
+                    </p>
+
+                    <span>
+                        This Month
+                    </span>
+                </article>
+
+
+                <article class="summary-card">
+                    <h2>Today's Expenses</h2>
+
+                    <p id="today-expenses">
+                        ₹0
+                    </p>
+
+                    <span>
+                        Today
+                    </span>
+                </article>
+
+
+                <article class="summary-card">
+                    <h2>Total Categories</h2>
+
+                    <p id="total-categories">
+                        0
+                    </p>
+
+                    <span>
+                        Categories Used
+                    </span>
+                </article>
+
+
+                <article class="summary-card">
+                    <h2>Total Transactions</h2>
+
+                    <p id="total-transactions">
+                        0
+                    </p>
+
+                    <span>
+                        This Month
+                    </span>
+                </article>
+
+            </section>
+
+
+            <!-- Middle Section -->
+            <section class="middle-section">
+
+
+                <!-- Add Expense -->
+                <section class="card add-expense-card">
+
+                    <h2>
+                        Add New Expense
+                    </h2>
+
+                    <form id="expense-form">
+
+                        <div class="form-group">
+
+                            <label for="amount">
+                                Amount (₹)
+                            </label>
+
+                            <input type="number" id="amount" name="amount" placeholder="Enter amount" required>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="category">
+                                Category
+                            </label>
+
+                            <select id="category" name="category" required>
+
+                                <option value="">
+                                    Select category
+                                </option>
+
+                                <option value="Food">
+                                    Food
+                                </option>
+
+                                <option value="Transport">
+                                    Transport
+                                </option>
+
+                                <option value="Shopping">
+                                    Shopping
+                                </option>
+
+                                <option value="Bills">
+                                    Bills
+                                </option>
+
+                                <option value="Entertainment">
+                                    Entertainment
+                                </option>
+
+                                <option value="Others">
+                                    Others
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="description">
+                                Description
+                            </label>
+
+                            <input type="text" id="description" name="description" placeholder="Enter description"
+                                required>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="date">
+                                Date
+                            </label>
+
+                            <input type="date" id="date" name="date" required>
+
+                        </div>
+
+
+                        <button type="submit" class="add-expense-button">
+                            Add expense
+                        </button>
+
+                    </form>
+
+                </section>
+
+
+                <!-- Expense Overview -->
+                <section class="card overview-card">
+
+                    <div class="card-header">
+
+                        <h2>
+                            Expense Overview
+                        </h2>
+
+
+                    </div>
+
+
+                    <div class="overview-content">
+
+                        <div class="chart" id="expense-chart"></div>
+
+
+                        <div class="category-breakdown">
+
+                            <div class="category-row">
+                                <span class="category-name">
+                                    <span class="category-dot"></span>
+                                    Food
+                                </span>
+                                <strong>₹0</strong>
+                                <small>0%</small>
+                            </div>
+
+                            <div class="category-row">
+                                <span class="category-name">
+                                    <span class="category-dot"></span>
+                                    Transport
+                                </span>
+                                <strong>₹0</strong>
+                                <small>0%</small>
+                            </div>
+
+                            <div class="category-row">
+                                <span class="category-name">
+                                    <span class="category-dot"></span>
+                                    Shopping
+                                </span>
+                                <strong>₹0</strong>
+                                <small>0%</small>
+                            </div>
+
+                            <div class="category-row">
+                                <span class="category-name">
+                                    <span class="category-dot"></span>
+                                    Bills
+                                </span>
+                                <strong>₹0</strong>
+                                <small>0%</small>
+                            </div>
+
+                            <div class="category-row">
+                                <span class="category-name">
+                                    <span class="category-dot"></span>
+                                    Entertainment
+                                </span>
+                                <strong>₹0</strong>
+                                <small>0%</small>
+                            </div>
+
+                            <div class="category-row">
+                                <span class="category-name">
+                                    <span class="category-dot"></span>
+                                    Others
+                                </span>
+                                <strong>₹0</strong>
+                                <small>0%</small>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+            </section>
+
+
+            <!-- Recent Expenses -->
+            <section class="recent-expenses">
+
+                <h2>
+                    Recent Expenses
+                </h2>
+
+                <table class="expense-table">
+
+                    <thead>
+
+                        <tr>
+                            <th>Description</th>
+                            <th>Category</th>
+                            <th>Date</th>
+                            <th>Amount</th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <!-- JavaScript will insert expenses here -->
+                    <tbody id="expense-table-body">
+                    </tbody>
+
+                </table>
+
+            </section>
+            <footer class="footer">
+    <p>Built with care by Md Sahil · 2026</p>
+</footer>
+
+        </main>
+
+    </div>
+
+<!-- Delete All Confirmation Modal -->
+<div class="delete-modal" id="delete-modal">
+
+    <div class="delete-modal-box">
+
+        <h2>Delete all expenses?</h2>
+
+        <p>
+            This will permanently remove all your expenses.
+            This action cannot be undone.
+        </p>
+
+        <div class="delete-modal-actions">
+
+            <button type="button" id="cancel-delete">
+                Cancel
+            </button>
+
+            <button type="button" id="confirm-delete">
+                Delete All
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+    <script src="script.js"></script>
+    
+
+</body>
+
+</html>
